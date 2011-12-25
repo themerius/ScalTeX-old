@@ -1,0 +1,31 @@
+article {
+	font: 1em/1.25em "CMU Serif";
+	text-align: justify;
+	width: 210mm;
+	height: 297mm;
+}
+
+.inner {
+	padding: 20mm 15mm 20mm 25mm;
+}
+
+p {
+	margin: 0;
+}
+
+p.first {
+	text-indent: 0;
+}
+
+p.next {
+	text-indent: 1.5em;
+}
+
+math {
+	padding: 1em;
+	font: 1.1em "CMU Serif";
+}
+
+.chapter-nr {
+	margin-right: 0.7em;
+}
