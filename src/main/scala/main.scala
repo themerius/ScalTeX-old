@@ -1,14 +1,11 @@
-import org.fusesource.scalate._
+import scaltex.article2012._
 
 object Hello {
   def main(args: Array[String]) {
-    println("Hello World!")
-    print(this.tmpl)
-  }
-
-  def tmpl : String = {
-    val engine = new TemplateEngine
-    val output = engine.layout("test.scaml")
-    return output
+    val vorwort = new Section("vorwort.md")
+    //vorwort.newPage("at position")
+    val article = new Article(List(vorwort))
+    println(vorwort.make)
+    println(article.gen)
   }
 }

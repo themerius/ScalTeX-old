@@ -1,0 +1,21 @@
+-@ val order: Int
+-@ val nr: String
+-@ val heading: String
+
+- if (order == 1)
+  %h1.pageTop
+    %span.chapter-nr
+      #{nr}
+    #{heading}
+
+- if (order == 2)
+  %h2.pageTop
+    %span.chapter-nr
+      #{nr}
+    #{heading}
+
+- if (order == 3)
+  %h3.pageTop
+    %span.chapter-nr
+      #{nr}
+    #{heading}
