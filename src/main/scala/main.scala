@@ -5,7 +5,6 @@ object Hello {
     val vorwort = new Section("vorwort.md")
     //vorwort.newPage("at position")
     val article = new Article(List(vorwort))
-    println(vorwort.make)
     println(article.gen)
   }
 }

@@ -1,0 +1,17 @@
+-@ val capitle: String
+-@ val nr: String
+-@ val seperator: String
+-@ val name: String
+
+-@ val pageContent: String
+-@ val pageNr: String
+
+%header
+  #{capitle} #{nr}#{seperator} #{name}
+
+%article
+  %div.inner
+    #{pageContent}
+
+%footer
+  #{pageNr}

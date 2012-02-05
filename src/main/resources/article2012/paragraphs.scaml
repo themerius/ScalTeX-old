@@ -1,1 +1,10 @@
-<h1 class="pageTop"><span class="chapter-nr">1</span>Ueberschrift</h1>
+-@ val content: String
+-@ val kind: String
+
+- if (kind == "first")
+  %p.first
+    #{content}
+
+- if (kind == "next")
+  %p.next
+    #{content}
