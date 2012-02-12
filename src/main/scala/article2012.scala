@@ -55,6 +55,7 @@ class Section(section: String) extends ArticleItem {
 class Article(items: List[ArticleItem]) {
 
   val engine = new TemplateEngine
+  engine.escapeMarkup = false
 
   def gen: String = {
     var str = ""
@@ -64,8 +65,10 @@ class Article(items: List[ArticleItem]) {
         str += innerItem.make
       }
     }
+    val page = new Page
+    page.pageContent = str
     val output = this.engine.layout("article2012/preamble.scaml",
-      Map("title" -> "SCALTEX", "content" -> str))
+      Map("title" -> "SCALTEX", "content" -> page.make))
     return output
   }
 }
@@ -77,13 +80,14 @@ class Heading(input: scala.xml.Node, order: Int) extends ArticleItem {
   var myItems = List[ArticleItem]()
 
   var nr = 1
+  var pageTop = true
   var heading = input.text
 
   override def make: String = {
     val engine = new TemplateEngine
     val output = engine.layout("article2012/headings.scaml",
       Map("nr" -> this.nr.toString, "heading" -> this.heading,
-          "order" -> this.order))
+          "pageTop" -> this.pageTop, "order" -> this.order))
     return output
   }
 
@@ -106,6 +110,30 @@ class Paragraph(input: scala.xml.Node) extends ArticleItem {
   }
 
   // Set Kind
+
+}
+
+class Page extends ArticleItem {
+
+  var myItems = List[ArticleItem]()
+
+  var capitle = "Kapitel"
+  var nr = "1"
+  var seperator = ":"
+  var name = "This capitle"
+  var pageContent = ""
+  var pageNr = "1"
+
+  override def make: String = {
+    val engine = new TemplateEngine
+    engine.escapeMarkup = false
+
+    val output = engine.layout("article2012/page.scaml",
+      Map("capitle" -> this.capitle, "nr" -> this.nr,
+          "seperator" -> this.seperator, "name" -> this.name,
+          "pageContent" -> this.pageContent, "pageNr" -> this.pageNr))
+    return output
+  }
 
 }
 

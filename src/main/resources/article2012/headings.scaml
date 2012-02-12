@@ -1,21 +1,37 @@
 -@ val order: Int
+-@ val pageTop: Boolean
 -@ val nr: String
 -@ val heading: String
 
-- if (order == 1)
+- if (order == 1 && pageTop)
   %h1.pageTop
     %span.chapter-nr
       #{nr}
     #{heading}
-
-- if (order == 2)
-  %h2.pageTop
+- if (order == 1 && !pageTop)
+  %h1
     %span.chapter-nr
       #{nr}
     #{heading}
 
-- if (order == 3)
+- if (order == 2 && pageTop)
+  %h2.pageTop
+    %span.chapter-nr
+      #{nr}
+    #{heading}
+- if (order == 2 && !pageTop)
+  %h2
+    %span.chapter-nr
+      #{nr}
+    #{heading}
+
+- if (order == 3 && pageTop)
   %h3.pageTop
+    %span.chapter-nr
+      #{nr}
+    #{heading}
+- if (order == 3 && !pageTop)
+  %h3
     %span.chapter-nr
       #{nr}
     #{heading}
