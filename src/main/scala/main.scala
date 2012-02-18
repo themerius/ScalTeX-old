@@ -1,6 +1,6 @@
 import scaltex.article2012._
 
-import java.io.FileWriter
+import java.io.{OutputStreamWriter, FileOutputStream}
 
 object Hello {
   def main(args: Array[String]) {
@@ -10,8 +10,10 @@ object Hello {
 
     // Save Article
     val articleStr = article.gen
-    val writer = new FileWriter("output.html")
-    writer.append(articleStr)
-    writer.close
+
+    val out = new OutputStreamWriter(
+      new FileOutputStream("output.html"), "UTF-8")
+    out.append(articleStr)
+    out.close
   }
 }
