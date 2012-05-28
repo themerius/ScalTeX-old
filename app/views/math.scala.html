@@ -1,0 +1,20 @@
+@(content: String)
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+    "HTML-CSS": {webFont: "Arial"}
+  });
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<div class="row">
+    <div class="col1">&nbsp;</div>
+    <div class="col10">
+        <p>@content</p>
+    </div>
+    <div class="col1">&nbsp;</div>
+    <div class="row-end">&nbsp;</div>
+</div>

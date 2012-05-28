@@ -1,0 +1,16 @@
+@import url(http://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic,700italic);
+
+body {
+	color: #000;
+	font-size: 12pt;
+	line-height: 1.25em;
+	font-family: 'Gentium Basic', serif;
+}
+
+img {
+	max-width: 138mm;
+}
+
+.chapter-nr {
+	margin-right: 0.5em;
+}

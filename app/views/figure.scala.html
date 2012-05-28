@@ -1,0 +1,19 @@
+@(picture: String, description: String)
+
+<div class="row">
+    <div class="col2">&nbsp;</div>
+    <div class="col8">
+        <img src="@routes.Assets.at("images/")@picture" alt=@description />
+    </div>
+    <div class="col2">&nbsp;</div>
+    <div class="row-end">&nbsp;</div>
+</div>
+
+<div class="row">
+    <div class="col2">&nbsp;</div>
+    <div class="col8">
+        <p>Abbildung 1: @description</p>
+    </div>
+    <div class="col2">&nbsp;</div>
+    <div class="row-end">&nbsp;</div>
+</div>
